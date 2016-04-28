@@ -1,0 +1,3 @@
+django-colorfield
+django-solo
+Pillow
