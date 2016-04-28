@@ -20,7 +20,7 @@
 
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
-from exchange.core.models import (SiteName, TagLine, BannerImage, IconImage,
+from models import (SiteName, TagLine, BannerImage, IconImage,
                                   LogoImage, NavbarColor, HyperLinkColor)
 
 admin.site.register(SiteName, SingletonModelAdmin)

@@ -1,32 +1,33 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
-README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
+README = open(os.path.join(os.path.dirname(__file__), 'README.md')).read()
 
 # Allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+
 setup(
-    name = 'django-geonode-uds',
-    version = '0.1',
-    packages = ['geonode_uds'],
+    name='geonode_uds',
+    version='0.1',
+    packages=find_packages(),
     install_requires=[
-       'django-colorfield',
-       'django-solo',
-       'Pillow'
+       'django-solo==1.1.2',
+       'django-colorfield==0.1.10',
+       'python-resize-image==1.1.10'
     ],
-    include_package_data = True,
-    license = 'BSD License',
-    description = '',
-    long_description = README,
-    url = '',
-    author = 'Boundless GeoSpatial',
-    author_email = '',
-    classifiers =[
+    include_package_data=True,
+    license='BSD License',
+    description='README.md',
+    long_description=README,
+    url='',
+    author='Boundless GeoSpatial',
+    author_email='',
+    classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License', # example license
+        'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
