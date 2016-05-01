@@ -5,9 +5,9 @@
 {% load solo_tags %}
 
 {% block extra_head %}
-  {% get_solo 'core.LogoImage' as logo %}
-  {% get_solo 'core.NavbarColor' as navcolor %}
-  {% get_solo 'core.HyperlinkColor' as hyperlinkcolor %}
+  {% get_solo 'geonode_uds.LogoImage' as logo %}
+  {% get_solo 'geonode_uds.NavbarColor' as navcolor %}
+  {% get_solo 'geonode_uds.HyperlinkColor' as hyperlinkcolor %}
   <link href="{{ STATIC_URL }}css/site_base.css" rel="stylesheet"/>
   <style>
     .navbar-brand {

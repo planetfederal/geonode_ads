@@ -18,6 +18,7 @@
 #
 #########################################################################
 
+import os
 from django.db import models
 from solo.models import SingletonModel
 from colorfield.fields import ColorField
@@ -25,7 +26,6 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 from resizeimage import resizeimage
-
 
 class SiteName(SingletonModel):
     site_name = models.CharField(max_length=75, default='Exchange')
@@ -54,7 +54,8 @@ class TagLine(SingletonModel):
 class BannerImage(SingletonModel):
     banner_image = models.ImageField(
         upload_to='static/img/',
-        help_text="Recommended dimensions: 1440px x 350px"
+        help_text="Recommended dimensions: 1440px x 350px",
+        default='upload/static/img/background.png'
         )
 
     def save(self, *args, **kwargs):
@@ -89,7 +90,9 @@ class BannerImage(SingletonModel):
 class IconImage(SingletonModel):
     icon_image = models.ImageField(
         upload_to='static/img/',
-        help_text="Recommended dimensions: 96px x 96px"
+        help_text="Recommended dimensions: 96px x 96px",
+        default="upload/static/img/icon.png"
+
     )
 
     def save(self, *args, **kwargs):
@@ -124,7 +127,8 @@ class IconImage(SingletonModel):
 class LogoImage(SingletonModel):
     logo_image = models.ImageField(
         upload_to='static/img/',
-        help_text="Must be 35px wide"
+        help_text="Must be 35px wide",
+        default='upload/static/img/logo.png'
     )
 
     def save(self, *args, **kwargs):

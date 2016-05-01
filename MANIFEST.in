@@ -1,5 +1,4 @@
 include LICENSE
 include README.rst
-recursive-include geonode-uds/static *
-recursive-include geonode-uds/templates *
-recursive-include docs *
+recursive-include geonode_uds/static *
+recursive-include geonode_uds/templates *
