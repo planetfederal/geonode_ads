@@ -1,5 +1,5 @@
 """
-WSGI config for uds_geonode project.
+WSGI config for ads_geonode project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "uds_geonode.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ads_geonode.settings")
 
 application = get_wsgi_application()

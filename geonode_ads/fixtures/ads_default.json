@@ -1,0 +1,51 @@
+[
+    {
+        "pk": 1,
+        "model": "geonode_ads.sitename",
+        "fields": {
+            "site_name": "Boundless Exchange"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.tagline",
+        "fields": {
+            "tag_line": "A Platform for Geospatial Collaboration"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.navbarcolor",
+        "fields": {
+            "color": "#29728C"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.hyperlinkcolor",
+        "fields": {
+            "color": "#FF6600"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.bannerimage",
+        "fields": {
+            "banner_image": "/static/img/background.png"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.iconimage",
+        "fields": {
+            "icon_image": "/static/img/icon.png"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "geonode_ads.logoimage",
+        "fields": {
+            "logo_image": "/static/img/logo.png"
+        }
+    }
+]

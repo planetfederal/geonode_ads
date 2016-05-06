@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.db import IntegrityError
 from django.db import transaction
 from django.core.files.uploadedfile import SimpleUploadedFile
-from geonode_uds.models import (SiteName, TagLine, BannerImage, IconImage,
+from geonode_ads.models import (SiteName, TagLine, BannerImage, IconImage,
                                 LogoImage, NavbarColor)
 workpath = os.path.dirname(os.path.abspath(__file__))
 

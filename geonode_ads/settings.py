@@ -1,5 +1,5 @@
 INSTALLED_APPS = (
-    'geonode_uds',
+    'geonode_ads',
     'solo',
     'colorfield'
 )

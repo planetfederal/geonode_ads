@@ -12,10 +12,10 @@
 {% block middle %}
 
   {% block hero %}
-  {% get_solo 'geonode_uds.BannerImage' as banner %}
-  {% get_solo 'geonode_uds.SiteName' as site_name %}
-  {% get_solo 'geonode_uds.IconImage' as icon %}
-  {% get_solo 'geonode_uds.TagLine' as tag_line %}
+  {% get_solo 'geonode_ads.BannerImage' as banner %}
+  {% get_solo 'geonode_ads.SiteName' as site_name %}
+  {% get_solo 'geonode_ads.IconImage' as icon %}
+  {% get_solo 'geonode_ads.TagLine' as tag_line %}
   <div class="jumbotron" style="background: url('..{{ banner.banner_image.url }}'); background-size: cover;">
     <div class="container">
       <h1>
