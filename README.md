@@ -1,7 +1,7 @@
 Geonode Admin Defined Skin
 ==============
 
-Allows the site administrator to customize various styles and assets through the Geonode admin panel. This readme covers the following sections
+Allows the site administrator to customize various styles and assets through the Geonode admin panel. This readme covers the following sections:
 
 * [Installation](#installation)
 * [Using ADS](#using)
@@ -67,7 +67,7 @@ When you visit your home screen, these assets will be replaced with the new imag
 
 <img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/upload_banner.png?raw=true" alt="Banner Selection" width="400"/>
 
-### Colors
+#### Colors
 "Hyperlink Color" and "Navigation Bar Color" provide a color picker menu. Choose a new color from the menu and save.
 
 <img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/change_color.png?raw=true" alt="Color Picker" width="400"/>
