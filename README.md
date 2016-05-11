@@ -12,7 +12,7 @@ Allows the site administrator to customize various styles and assets through the
 1. Download geonode_ads and pip install from the local geonode_ads directory containing the setup.py file. e.g.:
 
   ```
-  pip install -e path/to/geonode_ads
+  pip install path/to/geonode_ads
   ```
 
 2. Import geonode_ads settings into Geonode's ``settings`` module:
@@ -21,13 +21,15 @@ Allows the site administrator to customize various styles and assets through the
   from geonode_ads.settings import INSTALLED_APPS as geonode_ads_apps
   ```
 
-3. Add ``geonode_ads_apps``  to ``INSTALLED_APPS`` in Geonode's ``settings`` module:
+3. Add ``geonode_ads_apps``  to the *top* of ``INSTALLED_APPS`` in Geonode's ``settings`` module. It is important that the geonode_ads app be added to the top so that the ads templates override the default templates:
 
   ```
-  INSTALLED_APPS += geonode_ads_apps
+  INSTALLED_APPS = geonode_ads_apps + [
+    #remaining apps
+  ]
   ```
 
-4. Add the geonode_ads urls to the *top* of the `urls.py` file in GeoNode and append them to the GeoNode url patterns. It is important that the geonode_ads urls be added to the top so that the ads templates override the default templates.
+4. Add the geonode_ads urls to the top of the `urls.py` file in GeoNode and append them to the GeoNode url patterns.
 
   ```
   from geonode_ads.urls import urlpatterns as ads_urls    

@@ -26,6 +26,8 @@ from PIL import Image
 from io import BytesIO
 from django.core.files.base import ContentFile
 from resizeimage import resizeimage
+from django.conf import settings
+
 
 class SiteName(SingletonModel):
     site_name = models.CharField(max_length=75, default='Exchange')
@@ -55,7 +57,7 @@ class BannerImage(SingletonModel):
     banner_image = models.ImageField(
         upload_to='static/img/',
         help_text="Recommended dimensions: 1440px x 350px",
-        default='upload/static/img/background.png'
+        default=settings.STATIC_ROOT + '/img/background.png'
         )
 
     def save(self, *args, **kwargs):
