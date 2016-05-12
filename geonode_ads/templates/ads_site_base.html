@@ -11,7 +11,8 @@
   <link href="{{ STATIC_URL }}css/site_base.css" rel="stylesheet"/>
   <style>
     .navbar-brand {
-      background: url('{{ logo.logo_image }}') no-repeat;
+      background: url('uploaded/{{ logo.logo_image }}') no-repeat;
+      background-size: contain;
     }
     .navbar-inverse {
       background-color: {{ navcolor.color }};

@@ -28,10 +28,10 @@ from django.core.files.base import ContentFile
 from resizeimage import resizeimage
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-
+from django.core.files.storage import FileSystemStorage
 
 class SiteName(SingletonModel):
-    site_name = models.CharField(max_length=75, default='Exchange')
+    site_name = models.CharField(max_length=75, default='GeoNode')
 
     def __unicode__(self):
         return u"Site Name"
@@ -58,7 +58,7 @@ class BannerImage(SingletonModel):
     banner_image = models.ImageField(
         upload_to='img/',
         help_text="Recommended dimensions: 1440px x 350px",
-        default=static('img/ads_background.png')
+        default='img/ads_background.png'
         )
 
     def save(self, *args, **kwargs):
@@ -94,8 +94,7 @@ class IconImage(SingletonModel):
     icon_image = models.ImageField(
         upload_to='img/',
         help_text="Recommended dimensions: 96px x 96px",
-        default=static("img/ads_icon.png")
-
+        default="img/ads_icon.png"
     )
 
     def save(self, *args, **kwargs):
@@ -130,8 +129,8 @@ class IconImage(SingletonModel):
 class LogoImage(SingletonModel):
     logo_image = models.ImageField(
         upload_to='img/',
-        help_text="Must be 35px wide",
-        default=static('img/ads_logo.png')
+        help_text="Height should be 35px",
+        default='img/ads_logo.png'
     )
 
     def save(self, *args, **kwargs):
