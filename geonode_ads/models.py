@@ -27,6 +27,7 @@ from io import BytesIO
 from django.core.files.base import ContentFile
 from resizeimage import resizeimage
 from django.conf import settings
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 class SiteName(SingletonModel):
@@ -55,9 +56,9 @@ class TagLine(SingletonModel):
 
 class BannerImage(SingletonModel):
     banner_image = models.ImageField(
-        upload_to='static/img/',
+        upload_to='img/',
         help_text="Recommended dimensions: 1440px x 350px",
-        default=settings.STATIC_ROOT + '/img/background.png'
+        default=static('img/ads_background.png')
         )
 
     def save(self, *args, **kwargs):
@@ -91,9 +92,9 @@ class BannerImage(SingletonModel):
 
 class IconImage(SingletonModel):
     icon_image = models.ImageField(
-        upload_to='static/img/',
+        upload_to='img/',
         help_text="Recommended dimensions: 96px x 96px",
-        default="upload/static/img/icon.png"
+        default=static("img/ads_icon.png")
 
     )
 
@@ -128,9 +129,9 @@ class IconImage(SingletonModel):
 
 class LogoImage(SingletonModel):
     logo_image = models.ImageField(
-        upload_to='static/img/',
+        upload_to='img/',
         help_text="Must be 35px wide",
-        default='upload/static/img/logo.png'
+        default=static('img/ads_logo.png')
     )
 
     def save(self, *args, **kwargs):

@@ -38,10 +38,10 @@ Allows the site administrator to customize various styles and assets through the
   )
   ```
 
-5. The ADS template relies on three placeholder images: `background.png`, `icon.png`, and `urls.png`. It will expect placeholder images to be served from <project domain>/static/img/. Copy these placeholder images into your project's static directory. e.g.:
+5. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. It will expect placeholder images to be served from your project's media directory. Copy these placeholder images into your project's static directory. e.g.:
 
   ```
-  cp path/to/geonode_ads/geonode_ads/static/img/* your/projects/static/img/dir/
+  cp path/to/geonode_ads/geonode_ads/static/img/* your/projects/media/img/dir/
   ```
 
 6. Sync your database and collect static files from ADS installed apps:
