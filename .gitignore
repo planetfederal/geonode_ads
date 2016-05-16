@@ -10,3 +10,5 @@ lib
 lib64
 build
 .pypirc
+.pyc
+.DS_STORE

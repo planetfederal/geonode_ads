@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "geonode_ads.sitename",
         "fields": {
-            "site_name": "Boundless Exchange"
+            "site_name": "GeoNode"
         }
     },
     {
@@ -31,21 +31,21 @@
         "pk": 1,
         "model": "geonode_ads.bannerimage",
         "fields": {
-            "banner_image": "/static/img/background.png"
+            "banner_image": "img/background.png"
         }
     },
     {
         "pk": 1,
         "model": "geonode_ads.iconimage",
         "fields": {
-            "icon_image": "/static/img/icon.png"
+            "icon_image": "img/icon.png"
         }
     },
     {
         "pk": 1,
         "model": "geonode_ads.logoimage",
         "fields": {
-            "logo_image": "/static/img/logo.png"
+            "logo_image": "img/logo.png"
         }
     }
 ]

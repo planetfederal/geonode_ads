@@ -14,7 +14,7 @@ setup(
     zip_safe=False,
     install_requires=['django-solo==1.1.2',
                       'django-colorfield==0.1.10',
-                      'python-resize-image'
+                      'python-resize-image',
                       ],
     include_package_data=True,
     license='BSD License',

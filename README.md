@@ -47,11 +47,13 @@ Allows the site administrator to customize various styles and assets through the
   )
   ```
 
-6. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. It will expect placeholder images to be served from your project's `MEDIA_ROOT` directory. Copy these placeholder images into your project's static directory. e.g.:
+6. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. In order to copy these to your project's `MEDIA_ROOT` directory, run the following command:
 
   ```
-  cp path/to/geonode_ads/geonode_ads/static/img/* your/projects/media/img/dir/
+  python manage.py ads_setup
   ```
+
+ *Note: ensure that the `MEDIA_ROOT` directory declared in your project's `settings.py` file exists.*
 
 7. Sync your database and collect static files from ADS installed apps:
 
