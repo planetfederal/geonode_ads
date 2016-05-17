@@ -1,11 +1,14 @@
-Geonode Admin Defined Skin
+Admin Defined Skin [Boundless Exchange]
 ==============
 
-Allows the site administrator to customize various styles and assets through the Geonode admin panel. This readme covers the following sections:
+Allows the site administrator to customize various styles and assets through the Geonode admin panel.
+
+**This repo provides a solution for GeoNode, and a separate solution for Boundless Exchange. The current branch is for Boundless Exchange.** For instructions on how to apply ADS to GeoNode, ``git checkout`` the ``geonode`` branch and refer to that branch's [readme](https://github.com/boundlessgeo/geonode_ads/blob/geonode/README.md).
+
+This readme covers the following sections:
 
 * [Installation](#installation)
 * [Using ADS](#using)
-* [Working With Fixtures](#fixtures)
 
 <a name="installation">Installation</a>
 ---------------------
@@ -38,16 +41,7 @@ Allows the site administrator to customize various styles and assets through the
   )
   ```
 
-5. Ensure that the app directories template loader is installed in your settings.py `TEMPLATE_LOADERS`:
-
-  ```
-  TEMPLATE_LOADERS = (
-    'django.template.loaders.app_directories.Loader',
-    # other loaders
-  )
-  ```
-
-6. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. In order to copy these to your project's `MEDIA_ROOT` directory, run the following command:
+5. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. In order to copy these to your project's `MEDIA_ROOT` directory, run the following command:
 
   ```
   python manage.py ads_setup
@@ -55,7 +49,7 @@ Allows the site administrator to customize various styles and assets through the
 
  *Note: ensure that the `MEDIA_ROOT` directory declared in your project's `settings.py` file exists.*
 
-7. Sync your database and collect static files from ADS installed apps:
+6. Sync your database and collect static files from ADS installed apps:
 
   ```
   python manage.py syncdb
@@ -84,18 +78,3 @@ When you visit your home screen, these assets will be replaced with the new imag
 "Hyperlink Color" and "Navigation Bar Color" provide a color picker menu. Choose a new color from the menu and save.
 
 <img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/change_color.png?raw=true" alt="Color Picker" width="400"/>
-
-<a name="fixtures">Working With Fixtures</a>
---------------
-
-You can use fixtures to quickly swap out static assets on your GeoNode instance. Check the geondode_ads/fixtures/ads_default.json file for as an example. After creating your own fixtures and adding them to your fixtures directory, run:
-
-```
-manage.py loaddata <fixturename>
-```
-
-To return your instance to the dafault ADS state, run:
-
-```
-manage.py loaddata ads_default.json
-```
