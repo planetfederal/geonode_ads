@@ -1,7 +1,8 @@
 GeoNode Admin Defined Skin
 ==============
+<img src="https://raw.githubusercontent.com/boundlessgeo/geonode_ads/master/img/sample_banner.png" width="700"/>
 
-Allows the site administrator to customize various styles and assets through the GeoNode admin panel. This README covers the following sections:
+Allows a GeoNode site administrator to customize various styles and assets through the admin panel's UI. This README covers the following sections:
 
 * [Installation](#installation)
 * [Using ADS](#using)
@@ -14,7 +15,7 @@ Allows the site administrator to customize various styles and assets through the
   pip install path/to/geonode_ads
   ```
 
-2. Import geonode_ads settings into GeoNode's ``settings`` module:
+2. Import GeoNode ADS settings into GeoNode's ``settings`` module:
 
   ```
   from geonode_ads.settings import INSTALLED_APPS as GEONODE_ADS_APPS
@@ -35,12 +36,12 @@ Allows the site administrator to customize various styles and assets through the
   ]
   ```
 
-4. Import Geonode ADS urls into your project's `urls.py` file:
+4. Import GeoNode ADS urls into your project's `urls.py` file:
   ```
   from geonode_ads.urls import urlpatterns as ads_urls
   ```
 
-5. Add the geonode_ads urls to the top of the `urls.py` file in GeoNode and append them to the begining of GeoNode url patterns.
+5. Append ``ads_urls`` to the beginning of your project's url patterns:
 
   ```  
   urlpatterns = ads_urls + patterns(
@@ -67,21 +68,21 @@ Allows the site administrator to customize various styles and assets through the
 -----------
 From the Django admin page, you will see a list of options below "Geonode ADS," including "Banner Image", "Hyperlink Color", "Icon Image", "Logo Image", "Navigation Bar Color", "Site Name", and "Tag Line".
 
-<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/ads_settings.png?raw=true" alt="ADS Options" width="400"/>
+<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/img/ads_settings.png?raw=true" alt="ADS Options" width="400"/>
 
 #### Textual Elements
-"Site Name" and "Tag Line" settings provide text forms for editing these elements. Simply replace the default text and choose to save.
+"Site Name" and "Tag Line" settings provide text forms for editing these elements. Simply replace the default text and save.
 
-<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/change_text.png?raw=true" alt="Text Form" width="400"/>
+<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/img/change_text.png?raw=true" alt="Text Form" width="400"/>
 
 #### Images
 The "Banner Image", "Logo Image", and "Icon Image" settings contain image forms that can be used to swap out these images on the home page. Simply select a new image from the form and choose to save.
 
 When you visit your home screen, these assets will be replaced with the new image that you selected. Notice that for each image, recommended dimensions are provided beneath the form.
 
-<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/upload_banner.png?raw=true" alt="Banner Selection" width="400"/>
+<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/img/upload_banner.png?raw=true" alt="Banner Selection" width="400"/>
 
 #### Colors
 "Hyperlink Color" and "Navigation Bar Color" provide a color picker menu. Choose a new color from the menu and save.
 
-<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/i/change_color.png?raw=true" alt="Color Picker" width="400"/>
+<img src="https://github.com/boundlessgeo/geonode_ads/blob/master/img/change_color.png?raw=true" alt="Color Picker" width="400"/>
