@@ -1,11 +1,7 @@
-Admin Defined Skin [Boundless Exchange]
+GeoNode Admin Defined Skin
 ==============
 
-Allows the site administrator to customize various styles and assets through the Geonode admin panel.
-
-**This repo provides a solution for GeoNode, and a separate solution for Boundless Exchange. The current branch is for Boundless Exchange.** For instructions on how to apply ADS to GeoNode, ``git checkout`` the ``geonode`` branch and refer to that branch's [readme](https://github.com/boundlessgeo/geonode_ads/blob/geonode/README.md).
-
-This readme covers the following sections:
+Allows the site administrator to customize various styles and assets through the GeoNode admin panel. This README covers the following sections:
 
 * [Installation](#installation)
 * [Using ADS](#using)
@@ -18,43 +14,54 @@ This readme covers the following sections:
   pip install path/to/geonode_ads
   ```
 
-2. Import geonode_ads settings into Geonode's ``settings`` module:
+2. Import geonode_ads settings into GeoNode's ``settings`` module:
 
   ```
-  from geonode_ads.settings import INSTALLED_APPS as geonode_ads_apps
+  from geonode_ads.settings import INSTALLED_APPS as GEONODE_ADS_APPS
   ```
 
-3. Add ``geonode_ads_apps``  to the *top* of ``INSTALLED_APPS`` in Geonode's ``settings`` module. It is important that the geonode_ads app be added to the top so that the ads templates override the default templates:
+3. Add ``GEONODE_ADS_APPS``  *before* ``GEONODE_APPS`` in your project's ``settings`` module. In GeoNode, it will look something like this:
 
   ```
-  INSTALLED_APPS = geonode_ads_apps + [
-    #remaining apps
+  INSTALLED_APPS = [
+      # installed apps
+  ] + GEONODE_ADS_APPS + GEONODE_APPS
+  ```
+  And in Boundless Exchange:
+
+  ```
+  INSTALLED_APPS = GEONODE_ADS_APPS + [
+      #remaining apps
   ]
   ```
 
-4. Add the geonode_ads urls to the top of the `urls.py` file in GeoNode and append them to the GeoNode url patterns.
-
+4. Import Geonode ADS urls into your project's `urls.py` file:
   ```
-  from geonode_ads.urls import urlpatterns as ads_urls    
+  from geonode_ads.urls import urlpatterns as ads_urls
+  ```
+
+5. Add the geonode_ads urls to the top of the `urls.py` file in GeoNode and append them to the begining of GeoNode url patterns.
+
+  ```  
   urlpatterns = ads_urls + patterns(
       # remaining urls
   )
   ```
 
-5. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. In order to copy these to your project's `MEDIA_ROOT` directory, run the following command:
+6. The ADS template relies on three placeholder images: `ads_background.png`, `ads_icon.png`, and `ads_logo.png`. In order to copy these to your project's `MEDIA_ROOT` directory, run the following command:
 
   ```
   python manage.py ads_setup
   ```
 
- *Note: ensure that the `MEDIA_ROOT` directory declared in your project's `settings.py` file exists.*
+ ***Note: ensure that the `MEDIA_ROOT` directory declared in your project's `settings.py` file exists.***
 
-6. Sync your database and collect static files from ADS installed apps:
+7. Sync your database:
 
   ```
   python manage.py syncdb
-  python manage.py collectstatic
   ```
+
 
 <a name="using">Using ADS</a>
 -----------
